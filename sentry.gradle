@@ -66,7 +66,7 @@ gradle.projectsEvaluated {
           releaseName = currentVariant[1]
           versionCode = currentVariant[2]
 
-          def nameCliTask = "${bundleTask.name}_SentryUpload_${versionCode}"
+          def nameCliTask = "${variant}_${bundleTask.name}_SentryUpload_${versionCode}"
 
           /** Upload source map file to the sentry server via CLI call. */
           def cliTask = tasks.create(name: nameCliTask, type: Exec) {
